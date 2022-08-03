@@ -5,3 +5,65 @@
 body {
     font-family: 'Lexend Deca', sans-serif;
 }
+
+.login-page {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login-page img {
+    width: 180px;
+    margin-top: 70px;
+    margin-bottom: 32px;
+}
+
+.login-page form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 0 36px;
+}
+
+.login-page input {
+    width: 100%;
+    height: 45px;
+    background: #FFFFFF;
+    border: 1px solid #D5D5D5;
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 19.976px;
+    line-height: 25px;
+    padding-left: 10px;
+}
+
+.login-page button {
+    width: 100%;
+    height: 45px;
+    background: #52B6FF;
+    border-radius: 4.63636px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20.976px;
+    line-height: 26px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.login-page p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13.976px;
+    line-height: 17px;
+    text-align: center;
+    text-decoration-line: underline;
+    color: #52B6FF;
+    margin-top: 25px;
+    cursor: pointer;
+}
