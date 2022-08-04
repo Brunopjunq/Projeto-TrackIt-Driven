@@ -40,6 +40,16 @@ body {
     font-size: 19.976px;
     line-height: 25px;
     padding-left: 10px;
+    color: #DBDBDB;
+}
+
+.login-page input::placeholder {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19.976px;
+    line-height: 25px;
+    color: #DBDBDB;
+
 }
 
 .login-page button {

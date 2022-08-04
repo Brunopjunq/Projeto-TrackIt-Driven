@@ -1,7 +1,7 @@
-import Logo from '../assets/Logo.png'
+import Logo from '../assets/Logo.png';
 import { useState } from 'react';
 import axios from 'axios';
-
+import { Link } from 'react-router-dom';
 
 export default function LoginPage() {
     const [email, setEmail] = useState('');
@@ -30,7 +30,7 @@ export default function LoginPage() {
                 <input placeholder='senha' type='password' value={senha} onChange={e => setSenha(e.target.value)} required/>
                 <button type='submit'>Entrar</button>
             </form>
-            <p>Não tem uma conta? Cadastre-se!</p>
+            <Link to='/cadastro'><p>Não tem uma conta? Cadastre-se!</p></Link>
         </div>
     )
 }
