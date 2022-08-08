@@ -1,21 +1,34 @@
 import Logo from '../assets/Logo.png';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import UserContext from '../contexts/UserContext';
 
 export default function LoginPage() {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
-
+    const { setUserData} = useContext(UserContext);
+    const navigate = useNavigate();
     function FazerLogin(e) {
         e.preventDefault();
 
-        const data = {
+        const LoginData = {
             email: email,
             password: senha
         };
 
-        console.log(data);
+        const promise = axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/login', LoginData);
+
+        promise.then(res => {
+            setUserData(res.data);
+            navigate('/hoje');
+        })
+
+        promise.catch(res => {
+            alert('Houve algum erro!Preencha os dados novamente!')
+        })
+
+        console.log(LoginData);
 
         setEmail('');
         setSenha('');

@@ -1,25 +1,37 @@
 import Logo from '../assets/Logo.png';
 import { useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function RegistrationPage() {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [name, setName] = useState('');
     const [image, setImage] = useState('');
+    const navigate = useNavigate();
 
     function FazerCadastro(e) {
         e.preventDefault();
 
-        const data = {
+        const SignUpdata = {
             email: email,
             name: name,
             image: image,
             password: senha
         };
 
-        console.log(data);
+        const promise = axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/sign-up', SignUpdata)
+
+        promise.then(res => {
+            navigate('/');
+        })
+
+        promise.catch(res => {
+            alert('Houve algum erro!Preencha os dados novamente!')
+        })
+
+        console.log(SignUpdata);
 
         setEmail('');
         setSenha('');

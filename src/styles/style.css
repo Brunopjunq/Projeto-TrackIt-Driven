@@ -77,3 +77,44 @@ body {
     margin-top: 25px;
     cursor: pointer;
 }
+
+.user-page {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #F2F2F2;
+    margin-top: 70px;
+}
+
+.user-page h1 {
+    font-family: 'Lexend Deca';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22.976px;
+    line-height: 29px;
+    color: #126BA5;
+    padding-left: 15px;
+    padding-top: 22px;
+}
+
+.user-page h2 {
+    font-family: 'Lexend Deca';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17.976px;
+    line-height: 22px;
+    color: #BABABA;
+    padding-left: 15px;
+}
+
+.user-page p {
+    font-family: 'Lexend Deca';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17.976px;
+    line-height: 22px;
+    color: #666666;
+    padding: 23px 10px;
+}
+
