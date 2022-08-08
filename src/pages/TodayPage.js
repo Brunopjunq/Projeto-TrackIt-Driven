@@ -7,6 +7,7 @@ import UserContext from "../contexts/UserContext";
 import DayContext from "../contexts/DayContext";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import HabitTask from "../components/HabitTask";
 
 export default function TodayPage() {
     const {userData} = useContext(UserContext);
@@ -31,8 +32,8 @@ export default function TodayPage() {
         })
 
         promise.catch(err => {
-            alert(err);
-            navigate('/');
+            // alert(err);
+            // navigate('/');
         })
 
     }
@@ -49,6 +50,7 @@ export default function TodayPage() {
         <div className="user-page">
             <h1>{dayjs().locale('pt-br').format('dddd, DD/MM')}</h1>
             <h2>{TodayPercentage() > 0 ? `${TodayPercentage()}% dos hábitos concluídos` : "Nenhum hábito concluído ainda"}</h2>
+            {dayData.map(taskData => <HabitTask taskData={taskData} renderDayHabits={renderDayHabits} />)}
         </div>
         <Footer />
         </>
