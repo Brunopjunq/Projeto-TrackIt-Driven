@@ -10,8 +10,7 @@ export default function Header() {
     return (
         <HeaderT>
             <img src={Logo} />
-            <UserPic src={Bob} />
-            {/* <UserPic src={userData.image} /> */}
+            <UserPic src={userData.image} />
         </HeaderT>
     )
     

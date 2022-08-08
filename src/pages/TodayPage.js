@@ -32,8 +32,8 @@ export default function TodayPage() {
         })
 
         promise.catch(err => {
-            // alert(err);
-            // navigate('/');
+            alert(err);
+            navigate('/');
         })
 
     }

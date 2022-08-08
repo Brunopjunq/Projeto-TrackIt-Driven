@@ -17,7 +17,8 @@ export default function HabitTask({ taskData: { id, name, currentSequence, highe
         }
 
         if(done) {
-            const promise = axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${id}/uncheck`, null, config);
+            setHabitDone(false);
+            const promise = axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${id}/uncheck`, config);
             promise.then(res => renderDayHabits());
             promise.catch(err => alert(err));
             promise.finally(() => setTimeout(() => {
@@ -25,7 +26,8 @@ export default function HabitTask({ taskData: { id, name, currentSequence, highe
             }, 500))
         }
         else {
-            const promise = axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${id}/check`, null, config);
+            setHabitDone(true);
+            const promise = axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${id}/check`, config);
             promise.then(res => renderDayHabits());
             promise.catch(err => alert(err));
             promise.finally(() => setTimeout(() => {
